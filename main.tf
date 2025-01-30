@@ -58,7 +58,7 @@ locals {
 # Create Default Provider for Management Account
 #
 provider "aws" {
-  region = "us-east-1"
+  //region = "us-east-1"
   default_tags {
     tags = local.default_tags
   }
