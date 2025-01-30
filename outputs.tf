@@ -38,3 +38,8 @@ output "sso_instance_id" {
   description = "AWS Identity Center Instance ID managed by org-kickstart"
   value       = tolist(data.aws_ssoadmin_instances.identity_store.identity_store_ids)[0]
 }
+
+output "sso_admin_group" {
+  description = "AWS Identity Center admin group managed by org-kickstart"
+  value       = aws_identitystore_group.admin_group
+}
