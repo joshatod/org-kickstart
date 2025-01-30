@@ -45,10 +45,14 @@ data "aws_organizations_organizational_units" "all_ous" {
   parent_id = data.aws_organizations_organization.org.roots[0].id
 }
 
+data "aws_organizations_organizational_unit_descendant_organizational_units" "all_ous" {
+  parent_id = data.aws_organizations_organization.org.roots[0].id
+}
+
 # Create a map to look up OU IDs by name. Thanks ChatGPT for almost getting there with what I needed.
 locals {
   ou_name_to_id = {
-    for ou in data.aws_organizations_organizational_units.all_ous.children :
+    for ou in data.aws_organizations_organizational_unit_descendant_organizational_units.all_ous.children :
     ou.name => ou.id
   }
 }
