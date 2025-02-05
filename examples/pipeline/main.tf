@@ -83,7 +83,7 @@ module "organization" {
   # Billing CUR Reports
   billing_data_bucket_name = lookup(var.organization, "billing_data_bucket_name", null)
   cur_report_frequency     = lookup(var.organization, "cur_report_frequency", "NONE")
-  cur_report_region        = lookup(var.organization, "cur_report_region", "us-east-1")
+  cur_bucket_region        = lookup(var.organization, "cur_bucket_region", "us-east-1")
 
   # Security Stuff
   security_services              = lookup(var.organization, "security_services", {})
