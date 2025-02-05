@@ -158,6 +158,12 @@ variable "cur_report_frequency" {
 
 }
 
+variable "cur_bucket_region" {
+  description = "Region of the S3 Bucket for CUR reports."
+  type        = string
+  default     = "us-east-1"
+}
+
 #
 # SCPs & OUs
 variable "service_control_policies" {
