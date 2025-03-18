@@ -43,13 +43,3 @@ output "sso_admin_group" {
   description = "AWS Identity Center admin group managed by org-kickstart"
   value       = aws_identitystore_group.admin_group
 }
-
-output "org_accounts" {
-  description = "AWS Organization accounts list"
-  value       = module.organization.module.accounts
-}
-
-output "org_ous_accounts" {
-  description = "AWS Organization OU and accounts list"
-  value       = module.organization.custom_ous
-}
